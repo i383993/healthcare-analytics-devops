@@ -1,7 +1,9 @@
 FROM python:3.11-slim
 
-# Install OpenJDK 17
-RUN apt-get update && apt-get install -y openjdk-17-jdk && rm -rf /var/lib/apt/lists/*
+# Install OpenJDK (Using default-jdk to ensure it finds a match)
+RUN apt-get update && \
+    apt-get install -y default-jdk --no-install-recommends && \
+    rm -rf /var/lib/apt/lists/*
 
 # Set JAVA_HOME
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
