@@ -18,6 +18,8 @@ spec:
         image: vsc-healthcare-analytics-5dd48c073337e3f3d865697be6f510b500a915f81ad6f6cfd31dba0d92134df8:latest
         imagePullPolicy: IfNotPresent  # CRITICAL: Prevents searching the internet
         ports:
+        # FIX: Documentation note - Port 8080 may conflict with local Jenkins
+# Internal Spark Master UI remains 8080; map to 8081 in port-forward.
         - containerPort: 8501
         - containerPort: 4040
         env:
