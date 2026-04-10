@@ -1,4 +1,5 @@
-FROM python:3.11-slim
+# Use bookworm instead of slim to ensure package availability
+FROM python:3.11-bookworm
 
 # Install OpenJDK
 RUN apt-get update && \
